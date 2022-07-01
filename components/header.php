@@ -41,19 +41,17 @@
         </ul>
         <!-- Right Side Navbar -->
         <?php
-        //mengecek username pada session
-        if (!isset($_SESSION['username'])) {
+        if (!isset($_SESSION['login'])) {
           echo '
             <div class="d-flex align-items-center my-2 my-lg-0">
               <div class="mx-2">
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-form">Buat Akun</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#register-form">Buat Akun</button>
               </div>
               <div class="mx-2">
-                <button type="button" class="btn btn-success" >Login</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#login-form">Login</button>
               </div>
             </div>
           ';
-
           } else {
             echo '
               <div class="d-flex align-items-center my-2 my-lg-0">
