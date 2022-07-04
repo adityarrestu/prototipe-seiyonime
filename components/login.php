@@ -31,7 +31,9 @@
       if(password_verify($password, $row["password"])) {
         // set session
         if($_SESSION["login"] = true);
-        
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["id"] = $row["id"];
+
         // cek remember me
         if(isset($_POST['remember'])) {
           // buat cookie
@@ -39,7 +41,7 @@
           setcookie('key', hash('sha256', $row['username'], time()+60));
         }
 
-        header('Location: index.php');
+        header('Location: ./index.php');
         echo '
           <script>
             alert("berhasil login!");

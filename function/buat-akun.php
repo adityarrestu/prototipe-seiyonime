@@ -4,7 +4,7 @@
   function registrasi($data) {
     global $conn;
 
-    $name = strtolower(stripslashes($data["name"]));
+    $name = stripslashes($data["name"]);
     $username = strtolower(stripslashes($data["username"]));
     $email = strtolower(stripslashes($data["email"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
