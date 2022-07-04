@@ -6,33 +6,13 @@
   include 'login.php';
   require 'register.php';
   require './function/query.php';
-  require './function/upload-img.php';
 
   if(isset($_SESSION['login'])) {
     $username = $_SESSION['username'];
   
     $user = query("SELECT * FROM users WHERE username = '$username'");
   }
-
-  if(isset($_POST["post"])) {
-
-    if(post($_POST) > 0) {
-      echo "
-        <script>
-          alert('post berhasil diupload!');
-          document.location.href = './index.php';
-        </script>
-      ";
-    } else {
-      echo "
-        <script>
-          alert('post gagal diupload!');
-          document.location.href = './index.php';
-        </script>
-      ";
-    }
-    
-  }
+  $contents = query("SELECT * FROM post");
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +33,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-dark shadow sticky-sm-top" style="background-color: #1192d3">
     <div class="container">
-      <a class="navbar-brand text-white" href="#">SEIYONIME</a>
+      <a class="navbar-brand text-white" href="?menu=beranda">SEIYONIME</a>
       <!-- Menu Button -->
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -67,13 +47,11 @@
           </li>
           <!-- Link to Marketplace -->
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Marketplace</a>
+            <a class="nav-link text-white" href="?menu=marketplace">Marketplace</a>
           </li>
         </ul>
         <!-- Right Side Navbar -->
-        <?php
-        if (!isset($_SESSION['login'])) {
-        ?>
+        <?php if (!isset($_SESSION['username'])) : ?>
         <div class="d-flex align-items-center my-2 my-lg-0">
           <div class="mx-2">
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#register-form">Buat
@@ -84,8 +62,7 @@
               data-bs-target="#login-form">Login</button>
           </div>
         </div>
-
-        <?php } else { ?>
+        <?php else: ?>
         <div class="d-flex align-items-center my-2 my-lg-0">
           <div type="button" class="pe-auto d-flex align-kkitems-center text-decoration-none mx-2"
             data-bs-toggle="modal" data-bs-target="#new-post">
@@ -95,7 +72,7 @@
           <!-- Dropdown Btn -->
           <div class="dropdown">
             <div class="dropdown-toggle-split" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              <a href="pe-auto">
+              <a href="">
                 <img src="./img/profile.jpg" class="rounded-circle" alt="" style="width: 2.5rem" />
               </a>
             </div>
@@ -107,15 +84,16 @@
                   <?= $user[0]["name"]; ?>
                 </a>
               </li>
-              <li><a class="dropdown-item" href="?menu=profil&u=<?= $username ?>">Profil</a></li>
               <li>
-                <a class="dropdown-item" href="?menu=logout">Logout</a>
+                <a class="dropdown-item" href="?menu=profil&u=<?= $username ?>">Profil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./components/logout.php">Logout</a>
               </li>
             </ul>
           </div>
         </div>
-        <?php } ?>
-
+        <?php endif; ?>
       </div>
     </div>
   </nav>

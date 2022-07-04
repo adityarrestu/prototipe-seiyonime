@@ -1,5 +1,11 @@
 <?php 
- 
+require './function/post.php';
+
+if(isset($_POST['submit'])) {
+
+  newPost($_POST);
+  var_dump($_FILES['gambar']);
+}
 ?>
 
 <!-- Modal New Post -->
@@ -15,7 +21,7 @@
           <img src="" class="img-fluid" alt="" />
         </div>
         <!-- Form New Post -->
-        <form action="./index.php" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
             <input class="form-control" type="file" id="gambar" name="gambar" />
           </div>
@@ -25,7 +31,7 @@
           </div>
           <input type="hidden" name="id" value=<?= $_SESSION['id'] ?>>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary mt-4" name="post">Post</button>
+            <button type="submit" class="btn btn-primary mt-4" name="submit">Post</button>
           </div>
         </form>
       </div>

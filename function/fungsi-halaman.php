@@ -13,6 +13,9 @@ function content($menu) {
   if($cek == 'profil') {
     $file = 'profile.php';
   }
+  if($cek == 'marketplace') {
+    $file = 'posting.php';
+  }
   return $file;
 }
 ?>
