@@ -12,7 +12,7 @@
   
     $user = query("SELECT * FROM users WHERE username = '$username'");
   }
-  $contents = query("SELECT * FROM post");
+  $contents = query("SELECT * FROM post");  
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-  <title>Seiyonime</title>
 </head>
 
 <body>
@@ -73,14 +72,14 @@
           <div class="dropdown">
             <div class="dropdown-toggle-split" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <a href="">
-                <img src="./img/profile.jpg" class="rounded-circle" alt="" style="width: 2.5rem" />
+                <img src="./img/<?= $user[0]['image'] ?>" class="rounded-circle" alt="" style="width: 2.5rem" />
               </a>
             </div>
             <!-- Dropdown Items -->
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
                 <a class="dropdown-item d-flex align-items-center fs-6" href="?menu=profil&u=<?= $username ?>">
-                  <img src="./img/profile.jpg" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
+                  <img src="./img/<?= $user[0]['image'] ?>" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
                   <?= $user[0]["name"]; ?>
                 </a>
               </li>

@@ -49,6 +49,8 @@
             <label for="password2" class="form-label">Konfirmasi Password</label>
             <input type="password" class="form-control" id="password2" name="password2" required>
           </div>
+          <!-- Default User Image -->
+          <input type="hidden" id="gambar" name="gambar" value="profile-<?= rand(0,8) ?>.jpg">
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary" name="register">Buat Akun</button>
         </form>

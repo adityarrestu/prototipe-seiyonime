@@ -9,6 +9,7 @@
     $email = strtolower(stripslashes($data["email"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+    $gambar = stripslashes($data["gambar"]);
 
     // cek username sudah ada atau belum
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
@@ -51,7 +52,7 @@
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan user baru ke database
-    mysqli_query($conn, "INSERT INTO users VALUES('', '$name', '$username', '$email', '$password', '')");
+    mysqli_query($conn, "INSERT INTO users VALUES('', '$name', '$username', '$email', '$password', '$gambar')");
 
     return mysqli_affected_rows($conn);
 

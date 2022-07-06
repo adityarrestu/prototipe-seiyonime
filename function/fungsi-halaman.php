@@ -7,11 +7,11 @@ function content($menu) {
   if($cek == 'beranda') {
     $file = 'beranda.php';
   }
-  if($cek == 'logout') {
-    $file = 'logout.php';
-  }
   if($cek == 'profil') {
     $file = 'profile.php';
+  }
+  if($cek == 'edit') {
+    $file = 'edit.php';
   }
   if($cek == 'marketplace') {
     $file = 'posting.php';

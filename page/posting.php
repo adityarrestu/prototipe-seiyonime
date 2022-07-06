@@ -1,3 +1,7 @@
+<head>
+  <title>Siyonime</title>
+</head>
+
 <div class="container">
   <div class="card my-4">
     <div class="card-body">
