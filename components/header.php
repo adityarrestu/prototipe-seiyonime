@@ -1,20 +1,3 @@
-<?php
-  // inisialisasi session
-  session_start();
-
-  include 'newpost.php';
-  include 'login.php';
-  require 'register.php';
-  require './function/query.php';
-
-  if(isset($_SESSION['login'])) {
-    $username = $_SESSION['username'];
-  
-    $user = query("SELECT * FROM users WHERE username = '$username'");
-  }
-  $contents = query("SELECT * FROM post");  
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +10,24 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 </head>
+
+<?php
+  // inisialisasi session
+  session_start();
+
+  include 'newpost.php';
+  include 'login.php';
+  require 'register.php';
+  require './function/query.php';
+  require 'view-post.php';
+
+  if(isset($_SESSION['login'])) {
+    $username = $_SESSION['username'];
+  
+    $user = query("SELECT * FROM users WHERE username = '$username'");
+  }
+  $contents = query("SELECT * FROM post");  
+?>
 
 <body>
   <!-- Navbar -->

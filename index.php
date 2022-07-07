@@ -7,5 +7,5 @@
   $file = content($_GET['menu']);
   include "page/$file";
 
-  require_once './components/footer.php'
+  require_once './components/footer.php';
 ?>
