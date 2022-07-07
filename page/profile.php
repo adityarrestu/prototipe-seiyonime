@@ -30,11 +30,13 @@
       <?php foreach ($userContent as $content) : ?>
         <div class="col">
           <div class="card p-2">
-            <img class="img-fluid" src="./img/<?= $content['image'] ?>" alt="" />
+            <a href="?menu=post&v=<?= $content['postId'] ?>" class="text-decoration-none text-dark">
+              <img class="img-fluid" src="./img/<?= $content['image'] ?>" alt="" />
+            </a>
             <div class="card-body p-2">
               <div class="d-flex align-items-center mb-3">
                 <img src="./img/<?= $postSender[0]['image'] ?>" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
-                <h6 class="card-title my-auto"><?= $postSender[0]['name'] ?></h6>
+                <h6 class="card-title my-auto text-nowrap text-truncate"><?= $postSender[0]['name'] ?></h6>
               </div>
               <p class="card-text">
                 <?= $content['description'] ?>

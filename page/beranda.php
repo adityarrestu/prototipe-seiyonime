@@ -13,13 +13,13 @@
       ?>
         <div class="col">
           <div class="card p-2">
-            <a href="" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#view-post" data-bs-content="<?= $content['image'] ?>" data-bs-postid="<?= $content['postId'] ?>">
+            <a href="?menu=post&v=<?= $content['postId'] ?>" class="text-decoration-none text-dark">
               <img class="img-fluid" src="./img/<?= $content['image'] ?>" alt="" />
             </a>
             <div class="card-body p-2">
               <div class="d-flex align-items-center mb-3">
                 <img src="./img/<?= $postSender[0]['image'] ?>" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
-                <h6 class="card-title my-auto"><?= $postSender[0]['name'] ?></h6>
+                <h6 class="card-title my-auto text-nowrap text-truncate"><?= $postSender[0]['name'] ?></h6>
               </div>
               <p class="card-text">
                 <?= $content['description'] ?>
@@ -31,22 +31,3 @@
     </div>
   </div>
 </div>
-
-<script type='text/javascript'>
-  let modalPost = document.getElementById('view-post')
-  let modalDelete = document.getElementById('delete-post')
-
-  modalPost.addEventListener('show.bs.modal', event => {
-    // Button that triggered the modal
-    let button = event.relatedTarget
-    // Extract info from data-bs-* attributes
-    let postImg = button.getAttribute('data-bs-content')
-    let modalBodyInput = modalPost.querySelector('.modal-body img')
-    modalBodyInput.src = "./img/" + postImg
-    
-    let postId = button.getAttribute('data-bs-postid')
-    let modalId = modalDelete.querySelector('#postId')
-    modalId.value = postId
-    
-  })
-</script>

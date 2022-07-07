@@ -16,6 +16,12 @@ function content($menu) {
   if($cek == 'marketplace') {
     $file = 'posting.php';
   }
+  if($cek == 'post') {
+    $file = 'view-post.php';
+  }
+  if($cek == 'delete-post') {
+    $file = 'delete-post.php';
+  }
   return $file;
 }
 ?>

@@ -19,7 +19,6 @@
   include 'login.php';
   require 'register.php';
   require './function/query.php';
-  require 'view-post.php';
 
   if(isset($_SESSION['login'])) {
     $username = $_SESSION['username'];
