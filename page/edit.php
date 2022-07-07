@@ -72,6 +72,9 @@ if (isset($_POST['editProfil'])) {
             </div>
             <!-- Button Submit Form Edit -->
             <div class="text-end">
+              <a href="index.php?menu=profil&u=<?= $user[0]['username'] ?>">
+                <button type="button" class="btn btn-secondary mt-4 me-3">Batal</button>
+              </a>
               <button type="submit" class="btn btn-primary mt-4" name="editProfil">Simpan Perubahan</button>
             </div>
           </form>

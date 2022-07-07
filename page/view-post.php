@@ -30,10 +30,12 @@
               <div class="d-flex flex-column">
                 <div class="row">
                   <div class="col-10">
-                    <div class="d-flex align-items-center mb-3 mt-3 mt-md-0">
-                      <img src="./img/<?= $postSender[0]['image'] ?>" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
-                      <h6 class="card-title my-auto text-nowrap text-truncate"><?= $postSender[0]['name'] ?></h6>
-                    </div>
+                    <a href="index.php?menu=profil&u=<?= $postSender[0]['username'] ?>" class="text-decoration-none text-dark">
+                      <div class="d-flex align-items-center mb-3 mt-3 mt-md-0">
+                        <img src="./img/<?= $postSender[0]['image'] ?>" class="rounded-circle me-3" alt="" style="width: 2.5rem" />
+                        <h6 class="card-title my-auto text-nowrap text-truncate text-decoration-none text-dark"><?= $postSender[0]['name'] ?></h6>
+                      </div>
+                    </a>
                   </div>
                   <?php if($_SESSION['id'] == $postSender[0]['id']) : ?>
                     <div class="col-2 p-0">
