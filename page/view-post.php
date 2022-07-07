@@ -12,12 +12,12 @@
 
 <div class="container-fluid p-0 p-md-2">
   <div class="position-relative">
-    <div class="container-lg p-0 ps-md-3">
+    <div class="container-lg p-0">
       <a href="?menu=beranda">
         <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle m-2 position-absolute start-0" style="z-index: 1000;"><i class='bx bx-arrow-back'></i></button>
       </a>
 
-      <div class="card m-0 my-md-4 mx-md-2">
+      <div class="card m-0 my-md-4 mx-0">
         <div class="card-body">
   
           <div class="row">
