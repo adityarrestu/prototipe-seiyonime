@@ -25,11 +25,11 @@ if (isset($_POST['editProfil'])) {
   mysqli_query($conn, $query);
 
   echo "
-      <script>
-        alert('Profil berhasil diubah');
-        window.location.href = 'index.php?menu=profil&u=';
-      </script>
-    ";
+    <script>
+      alert('Profil berhasil diubah');
+      window.location.href = 'index.php?menu=profil&u=$username';
+    </script>
+  ";
 }
 ?>
 
