@@ -30,7 +30,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-dark shadow sticky-sm-top" style="background-color: #1192d3">
-    <div class="containerl">
+    <div class="container">
       <a class="navbar-brand text-white" href="?menu=beranda">SEIYONIME</a>
       <!-- Menu Button -->
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
