@@ -1,5 +1,5 @@
 <head>
-  <title>Siyonime</title>
+  <title>Seiyonime</title>
 </head>
 
 <!-- Beranda -->

@@ -31,7 +31,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-dark shadow sticky-sm-top" style="background-color: #1192d3">
-    <div class="container">
+    <div class="containerl">
       <a class="navbar-brand text-white" href="?menu=beranda">SEIYONIME</a>
       <!-- Menu Button -->
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
@@ -63,7 +63,7 @@
         </div>
         <?php else: ?>
         <div class="d-flex align-items-center my-2 my-lg-0">
-          <div type="button" class="pe-auto d-flex align-kkitems-center text-decoration-none mx-2"
+          <div type="button" class="pe-auto d-flex align-items-center text-decoration-none mx-2"
             data-bs-toggle="modal" data-bs-target="#new-post">
             <i class="bx bx-plus text-white fs-3" data-bs-toggle="tooltip" data-bs-placement="top"
               data-bs-custom-class="custom-tooltip" title="Buat Postingan Baru"></i>

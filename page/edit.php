@@ -3,16 +3,36 @@
 </head>
 
 <?php
+$post = query("SELECT * FROM post WHERE postId = '$id'");
+
 if (isset($_POST['editProfil'])) {
   $id =  $_SESSION['id'];
   $name = $_POST['name'];
   $username = $_POST['username'];
   $email = $_POST['email'];
+  $gambarLama = './img/' . $post[0]['image'];
+
   
   if ($_FILES['gambar']['name'] == null) {
     $userImg = $user[0]['image']; 
   } else {
     $userImg = upload();
+
+    if ($userImg) {
+      if (!unlink($gambarLama)) {
+        echo '
+            <script>
+              alert("Tidak bisa menghapus gambar karena error");
+            </script>
+          ';
+      }
+    } else {
+      echo '
+          <script>
+            alert("Error");
+          </script>
+        ';
+    }
   }
 
   $query = "UPDATE users SET 
