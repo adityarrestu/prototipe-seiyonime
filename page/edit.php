@@ -19,13 +19,26 @@ if (isset($_POST['editProfil'])) {
     $userImg = upload();
 
     if ($userImg) {
-      if (!unlink($gambarLama)) {
-        echo '
-            <script>
-              alert("Tidak bisa menghapus gambar karena error");
-            </script>
-          ';
+      if($gambarLama != "profile-1.jpg" || 
+        $gambarLama != "profile-2.jpg" ||
+        $gambarLama != "profile-3.jpg" ||
+        $gambarLama != "profile-4.jpg" ||
+        $gambarLama != "profile-5.jpg" ||
+        $gambarLama != "profile-6.jpg" ||
+        $gambarLama != "profile-7.jpg" ||
+        $gambarLama != "profile-8.jpg" ||
+        $gambarLama != "profile-9.jpg"
+      ) {
+        
+        if (!unlink($gambarLama)) {
+          echo '
+              <script>
+                alert("Tidak bisa menghapus gambar karena error");
+              </script>
+            ';
+        }
       }
+
     } else {
       echo '
           <script>
