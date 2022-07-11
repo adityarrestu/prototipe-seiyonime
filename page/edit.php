@@ -19,7 +19,8 @@ if (isset($_POST['editProfil'])) {
     $userImg = upload();
 
     if ($userImg) {
-      if($gambarLama != "profile-1.jpg" || 
+      if($gambarLama != "profile-0.jpg" || 
+        $gambarLama != "profile-1.jpg" ||
         $gambarLama != "profile-2.jpg" ||
         $gambarLama != "profile-3.jpg" ||
         $gambarLama != "profile-4.jpg" ||
